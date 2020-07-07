@@ -36,12 +36,13 @@ class DeployTest extends AbstractContextTest
         $workflow = new Workflow\Deployer($context);
 
         $releaseId = $context->getReleaseId();
+        $currentDir = $context->getPlatform()->getServers()[0]->getCurrentDir();
 
         $ssh->exec("mkdir -p /home/wwwroot/automate/demo/releases/$releaseId")->shouldBeCalled();
         $ssh->exec("cd /home/wwwroot/automate/demo/releases/$releaseId; git clone git@github.com:julienj/symfony-demo.git -q --recursive -b master .")->shouldBeCalled();
         $ssh->exec("cd /home/wwwroot/automate/demo/releases/$releaseId; php -v")->shouldBeCalled();
         $ssh->exec("cd /home/wwwroot/automate/demo/releases/$releaseId; composer install")->shouldBeCalled();
-        $ssh->exec("ln -sfn /home/wwwroot/automate/demo/releases/$releaseId /home/wwwroot/automate/demo/current")->shouldBeCalled();
+        $ssh->exec("ln -sfn /home/wwwroot/automate/demo/releases/$releaseId /home/wwwroot/automate/demo/".$currentDir)->shouldBeCalled();
 
 
         $rs = $workflow->deploy();

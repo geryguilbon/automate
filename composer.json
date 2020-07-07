@@ -33,5 +33,6 @@
             "Automate\\Tests\\": "tests/Automate"
 
         }
-    }
+    },
+    "bin": ["bin/automate"]
 }

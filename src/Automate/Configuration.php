@@ -97,6 +97,7 @@ class Configuration implements ConfigurationInterface
                     ->scalarNode('password')->end()
                     ->scalarNode('ssh_key')->cannotBeEmpty()->end()
                     ->scalarNode('path')->isRequired()->cannotBeEmpty()->end()
+                    ->scalarNode('current_dir')->end()
                     ->scalarNode('shared_path')->cannotBeEmpty()->end()
                     ->integerNode('port')->end()
                 ->end()

@@ -10,6 +10,7 @@ platforms:
                 user: root
                 password: "%dev_password%"
                 path: /home/wwwroot/automate/demo
+                current_dir: www
     production:
         default_branch: production
         servers:
@@ -18,11 +19,13 @@ platforms:
                 user: user
                 password: "%prod_password%"
                 path: /home/wwwroot/exemple
+                current_dir: www
             eddv-exemple-front-02:
                 host: 12.9.9.2
                 user: user
                 password: "%prod_password%"
                 path: /home/wwwroot/exemple
+                current_dir: www
 
 shared_files:
     - app/config/parameters.yml

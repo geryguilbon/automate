@@ -10,6 +10,7 @@ platforms:
                 user: automate
                 password: p@ssw0rd
                 path: /home/wwwroot/automate/demo
+                current_dir: www
 shared_files:
     - app/config/parameters.yml
 shared_folders:

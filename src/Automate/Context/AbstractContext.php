@@ -236,6 +236,6 @@ abstract class AbstractContext implements ContextInterface
      */
     public function getCurrentPath(Server $server)
     {
-        return $server->getPath().'/current';
+        return $server->getPath().'/'.$server->getCurrentDir();
     }
 }

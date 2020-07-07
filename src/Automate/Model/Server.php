@@ -53,6 +53,11 @@ class Server
     private $sharedPath;
 
     /**
+     * @var string
+     */
+    private $currentDir;
+
+    /**
      * @var int
      */
     private $port;
@@ -193,6 +198,26 @@ class Server
     public function setSharedPath($sharedPath)
     {
         $this->sharedPath = $sharedPath;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCurrentDir()
+    {
+        return $this->currentDir;
+    }
+
+    /**
+     * @param string $currentDir
+     *
+     * @return Server
+     */
+    public function setCurrentDir($currentDir)
+    {
+        $this->currentDir = $currentDir;
 
         return $this;
     }
